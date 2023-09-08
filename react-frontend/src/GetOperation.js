@@ -4,7 +4,7 @@ function GetOperation() {
   const [operationCode, setOperationCode] = useState('');
 
   useEffect(() => {
-    fetch('https://bajaj-finserv-production.up.railway.app/bhfl')
+    fetch('/bhfl')
       .then(response => response.json())
       .then(data => setOperationCode(data.operation_code))
       .catch(error => console.error('Error:', error));

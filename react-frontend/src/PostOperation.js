@@ -22,7 +22,7 @@ function PostOperation() {
     };
 
     try {
-      const response = await fetch('https://bajaj-finserv-production.up.railway.app/bhfl', requestOptions);
+      const response = await fetch('/bhfl', requestOptions);
       const data = await response.json();
       setResponse(data);
     } catch (error) {

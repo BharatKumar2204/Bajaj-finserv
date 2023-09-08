@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import string
 from flask_restful import Api
 from flask_cors import CORS
@@ -6,6 +6,9 @@ app = Flask(__name__,static_url_path='', static_folder='frontend/build')
 CORS(app) #comment this on deployment
 api = Api(app)
 # ...
+@app.route("/", defaults={'path':''})
+def serve(path):
+    return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/bhfl', methods=['GET', 'POST'])
 def api():

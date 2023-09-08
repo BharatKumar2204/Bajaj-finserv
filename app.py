@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import string
 from flask_restful import Api
 from flask_cors import CORS
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='', static_folder='frontend/build')
 CORS(app) #comment this on deployment
 api = Api(app)
 # ...
